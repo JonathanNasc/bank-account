@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import AccountBalance from './AccountBalance';
+import * as Balance from './balance';
 
 let balanceRouter: Router = Router();
 
 balanceRouter.get('/', (req, res, next) => {
     let accountId = req.query.account_id.toString();
-    let balance = AccountBalance.getBalance(accountId);
+    let balance = Balance.get(accountId);
     res.json(balance);
     res.status(200);
 });

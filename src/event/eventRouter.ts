@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import EventParams from './EventParameters';
-import EventHandler from './EventHandler';
+import EventParams from './eventParameters';
+import * as EventHandler from './eventHandler';
 
 let eventRouter: Router = Router();
 
