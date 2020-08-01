@@ -1,4 +1,4 @@
-# Jonathan's Ipkiss solution
+# Jonathan's bank balance account master solution
 
 ## Setup
 1. Install nodejs (version recommended 13.12.0)

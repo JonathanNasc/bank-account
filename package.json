@@ -1,7 +1,7 @@
 {
-    "name": "jonathan-ipkiss",
+    "name": "jonathan-bank",
     "version": "0.0.1",
-    "description": "EBANX hiring test",
+    "description": "Bank simulation with append only data structure",
     "repository": {
         "type": "git"
     },
