@@ -1,12 +1,12 @@
-import AccountScheme from "./schemes/accountScheme";
-import MovementScheme from "./schemes/MovementScheme";
+import Account from "./schemes/Account";
+import Movement from "./schemes/Movement";
 
 export default class Db {
 
     private static inMemoryDb: Db;
 
-    public accounts: Array<AccountScheme> = [];
-    public movements: Array<MovementScheme> = [];
+    public accounts: Array<Account> = [];
+    public movements: Array<Movement> = [];
 
     public static get(): Db {
         return Db.inMemoryDb;
