@@ -1,0 +1,7 @@
+/node_modules
+/dist
+typings
+.env
+*.http
+*queries.sql
+.vscode/settings.json
