@@ -3,6 +3,7 @@ import Deposit from "../operation/Deposit";
 import Withdraw from "../operation/Withdraw";
 import Transfer from "../operation/Transfer";
 import AccountBalance from "../balance/AccountBalance";
+import HttpError from "../error/HttpError";
 
 export default class EventHandler {
 
@@ -12,7 +13,7 @@ export default class EventHandler {
         if (type == 'withdraw') return EventHandler.withdraw(eventParams);
         if (type == 'transfer') return EventHandler.transfer(eventParams);
 
-        throw new Error("This type is not valid: " + type);
+        throw new HttpError(400, "This type is not valid: " + type);
     }
 
     private static deposit(params: EventParams): any {

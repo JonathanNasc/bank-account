@@ -1,5 +1,6 @@
 import Movement from "../schemes/Movement";
 import Account from "../schemes/Account";
+import HttpError from "../error/HttpError";
 
 export default class AccountBalance {
 
@@ -12,7 +13,7 @@ export default class AccountBalance {
 
     public static validateAccount(accountId: string): void {
         if (Account.getById(accountId) == null) {
-            throw new Error("Not possible to get balance: account not found");
+            throw new HttpError(404, "Not possible to get balance: account not found");
         }
     }
 

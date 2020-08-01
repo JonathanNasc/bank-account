@@ -5,6 +5,7 @@ import Db from "./Db";
 import resetRouter from './reset/resetRouter';
 import balanceRouter from "./balance/balanceRouter";
 import eventRouter from "./event/eventRouter";
+import ErrorHandler from "./error/ErrorHandler";
 
 export default class Server {
 
@@ -30,11 +31,7 @@ export default class Server {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.configureRoutes();
-        this.app.use((err: any, req: any, res: any, next: any) => {
-            console.log(err);
-            res.sendStatus(err.status || 404);
-            res.end();
-        });
+        this.app.use(ErrorHandler.handle);
     }
 
 }

@@ -1,11 +1,12 @@
 import Account from "../schemes/Account";
 import Movement from "../schemes/Movement";
+import HttpError from "../error/HttpError";
 
 export default class Transfer {
 
     public static execute(originAccountId: string, destinationAccountId: string, amount: number): void {
         if (Account.getById(originAccountId) == null) {
-            throw new Error("Transfer invalid: account not found");
+            throw new HttpError(404, "Transfer invalid: account not found");
         }
 
         Account.createIfNotExist(destinationAccountId);
